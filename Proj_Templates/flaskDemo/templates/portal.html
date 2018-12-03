@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Welcome to your Employee Center</h1>
+  <div class="content-section">
+      <form method="POST" action="">
+          {{ form.hidden_tag() }}
+          <h3>Check Arrivals</h3>
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Select Date</legend>
+              <div class="form-group">
+                  {{ form.arrival.label(class="form-control-label") }}
+
+                  {% if form.arrival.errors %}
+                      {{ form.arrival(class="form-control form-control-lg is-invalid") }}
+                      <div class="invalid-feedback">
+                          {% for error in form.arrival.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                      </div>
+                  {% else %}
+                      {{ form.arrival(class="form-control form-control-lg") }}
+                  {% endif %}
+              </div>
+              <div class="form-group">
+                  {{ form.submit(class="btn btn-outline-info") }}
+              </div>
+              <h3>Check Total Number of Guests By Date</h3>
+              <legend class="border-bottom mb-4">Select Date</legend>
+              <div class="form-group">
+                  {{ form.arrival.label(class="form-control-label") }}
+
+                  {% if form.arrival.errors %}
+                      {{ form.arrival(class="form-control form-control-lg is-invalid") }}
+                      <div class="invalid-feedback">
+                          {% for error in form.arrival.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                      </div>
+                  {% else %}
+                      {{ form.arrival(class="form-control form-control-lg") }}
+                  {% endif %}
+              </div>
+            </fieldset>
+              <div class="form-group">
+                  {{ form.submit(class="btn btn-outline-info") }}
+              </div>
+      </form>
+  </div>
+
+{% endblock content %}
