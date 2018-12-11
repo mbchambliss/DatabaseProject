@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Select Room Type</h1>
+    <br>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Reserve A Room Today</legend>
+                <div class="form-group">
+                    {{ form.room_type.label(class="form-control-label") }}
+
+                    {% if form.room_type.errors %}
+                        {{ form.room_type(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.room_type.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.room_type(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <!-- <div class="form-group">
+                    {{ outstring }}
+                </div> -->
+              </fieldset>
+                <div class="form-group">
+                    <h3>{{ form.submit(class="btn btn-outline-info") }}</h3>
+                </div>
+        </form>
+    </div>
+
+    <!-- I want to add a feature where if a user puts in a non-valid Name & Reservation Number
+    a box pops up that says "Invalid Name and/or Reservation Number. Please call
+    the hotel at 1-800-555-5555" -->
+
+{% endblock content %}
