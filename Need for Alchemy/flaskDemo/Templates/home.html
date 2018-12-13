@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Welcome to Hotel 453</h1>
+  <p> We're Chicago's newest boutique hotel and we're excited for you to stay
+    with us.</p>
+    <p>To reserve your room with us, please click the Reserve A Room link above.</p>
+    <p>Still not sure if you want to stay with us? Take a closer look at our hotel
+      and the variety of amenities <a href="/about">here!</a></p>
+      <img src="/static/img/hotel-facade.jpg" />
+    <!-- {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %} -->
+{% endblock content %}
