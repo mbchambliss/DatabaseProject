@@ -107,15 +107,3 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
-
-.card card-body {
-  float: left;
-}
-
-#multiCollapseExample1 {
-  float: left;
-}
-
-#multiCollapseExample2 {
-  float: left;
-}
