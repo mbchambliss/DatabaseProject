@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Select Room Type</h1>
+    <br>
+    <div class="content-section">
+                <legend class="border-bottom mb-4">Reserve A Room Today</legend>
+                <div class="form-group">
+                  <ul>
+                    {% for row in rows %}
+                      <li>{{ row[1] }}</li>
+                    {% endfor %}
+                  </ul>
+                  <!-- <h4>{{ outString }}</h4> -->
+                </div>
+    </div>
+
+    <!-- I want to add a feature where if a user puts in a non-valid Name & Reservation Number
+    a box pops up that says "Invalid Name and/or Reservation Number. Please call
+    the hotel at 1-800-555-5555" -->
+
+{% endblock content %}

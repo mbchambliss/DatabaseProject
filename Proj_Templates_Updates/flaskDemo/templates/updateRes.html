@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Update Reservation</h1>
+    <br>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Find Your Reservation</legend>
+                <div class="form-group">
+                    {{ form.lastName.label(class="form-control-label") }}
+
+                    {% if form.lastName.errors %}
+                        {{ form.lastName(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.lastName.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.lastName(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+				<div class="form-group">
+                    {{ form.firstName.label(class="form-control-label") }}
+
+                    {% if form.firstName.errors %}
+                        {{ form.firstName(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.firstName.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.firstName(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.resNumber.label(class="form-control-label") }}
+
+                    {% if form.resNumber.errors %}
+                        {{ form.resNumber(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.resNumber.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.resNumber(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+              </fieldset>
+                <div class="form-group">
+                    <h3>{{ form.submit(class="btn btn-outline-info") }}</h3>
+                </div>
+        </form>
+    </div>
+
+    <!-- I want to add a feature where if a user puts in a non-valid Name & Reservation Number
+    a box pops up that says "Invalid Name and/or Reservation Number. Please call
+    the hotel at 1-800-555-5555" -->
+{% endblock content %}
